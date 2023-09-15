@@ -10,31 +10,8 @@ const LangOptions = [
 ];
 
 const Header = (props) => {
-  const { t } = useTranslation();
-
-  const { options, selectedValue, onChange } = props;
-
-  const renderOptions = () => {
-    if (options && options.length <= 0) {
-      return null;
-    }
-    return options.map((option, index) => {
-      return (
-        <option
-          key={index}
-          value={index}
-          // onClick={(e) => console.log(e)}
-          // value={selectedValue.value === option.value}
-          className={`${
-            selectedValue.value === option.value ? "selected" : ""
-          }`}
-        >
-          {option.label}
-        </option>
-      );
-    });
-  };
-
+  const { options, selectedValue } = props;
+  
   const onLangChange = (e) => {
     const { value } = LangOptions[e];
     i18next.changeLanguage(value);
