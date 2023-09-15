@@ -1,6 +1,5 @@
 import React from "react";
 import Select from "../Select/Select";
-import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Link } from "react-router-dom";
 
@@ -10,7 +9,6 @@ const LangOptions = [
 ];
 
 const Header = (props) => {
-  const { options, selectedValue } = props;
   
   const onLangChange = (e) => {
     const { value } = LangOptions[e];
